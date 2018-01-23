@@ -32,7 +32,7 @@ class Scraper
 
     scraped = {}
     scraped[:twitter] = twitter
-    scraped[:linkedin] => social_links.select {|s| s.include?("linkedin") }.first
+    scraped[:linkedin] = social_links.select {|s| s.include?("linkedin") }.first
 
     scraped
   end
