@@ -37,6 +37,8 @@ class Scraper
     scraped[:blog] = social_links.select { |s| social.all? { |soc| !s.include? soc } }.first
     scraped[:profile_quote] = doc.css(".profile-quote").text
     scraped[:bio] = doc.css(".description-holder p").text
+
+    scraped
   end
 
 end
