@@ -32,7 +32,7 @@ class Scraper
 
     scraped = {}
     scraped[:twitter] = twitter
-    scraped << { :linkedin => social_links.select {|s| s.include?("linkedin") }.first,
+    scraped < { :linkedin => social_links.select {|s| s.include?("linkedin") }.first,
       :github => social_links.select {|s| s.include?("github") }.first,
       :blog => social_links.select { |s| social.all? { |soc| !s.include? soc } }.first,
       :profile_quote => doc.css(".profile-quote").text,
