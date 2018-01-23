@@ -23,13 +23,13 @@ class Scraper
 
     social_links = doc.css(".social-icon-container a").map { |link| link["href"] }
     social = ["twitter", "youtube", "facebook", "github", "linkedin"]
-    
+
     twitter = social_links.select {|s| s.include?("twitter") }
     linkedin = social_links.select {|s| s.include?("linkedin") }
     github = social_links.select {|s| s.include?("github") }
 
-    twitter = twitter.blank ? nil : twitter.first 
-    
+    twitter = twitter.blank? nil : twitter.first
+
     { :twitter => twitter,
       :linkedin => social_links.select {|s| s.include?("linkedin") }.first,
       :github => social_links.select {|s| s.include?("github") }.first,
