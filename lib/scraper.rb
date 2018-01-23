@@ -28,7 +28,7 @@ class Scraper
     linkedin = social_links.select {|s| s.include?("linkedin") }
     github = social_links.select {|s| s.include?("github") }
     blog = social_links.select { |s| social.all? { |soc| !s.include? soc } }
-    
+
     scraped = {}
     scraped[:twitter] = twitter.first unless twitter.empty?
     scraped[:linkedin] = linkedin.first unless linkedin.empty?
@@ -36,7 +36,6 @@ class Scraper
     scraped[:blog] = blog.first unless blog.empty?
     scraped[:profile_quote] = doc.css(".profile-quote").text
     scraped[:bio] = doc.css(".description-holder p").text
-
     scraped
   end
 
