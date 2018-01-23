@@ -30,7 +30,7 @@ class Scraper
 
     twitter = twitter.empty? ? nil : twitter.first
 
-    { :twitter => nil,
+    { :twitter => twitter,
       :linkedin => social_links.select {|s| s.include?("linkedin") }.first,
       :github => social_links.select {|s| s.include?("github") }.first,
       :blog => social_links.select { |s| social.all? { |soc| !s.include? soc } }.first,
