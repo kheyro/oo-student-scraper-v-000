@@ -7,11 +7,13 @@ class Student
   def initialize(student_hash)
     @name = "#{student_hash[:name]}"
     @location = "#{student_hash[:location]}"
+    @twitter = "#{student_hash[:twitter]}"
+    @linkedin = "#{student_hash[:linkedin]}"
     @@all << self
   end
 
   def self.create_from_collection(students_array)
-
+    self.new()
   end
 
   def add_student_attributes(attributes_hash)
